@@ -1,0 +1,194 @@
+/* The app's existing earliest layer wins important declarations over NGO's
+   community/utilities layers. Scope every native override to this companion. */
+@layer properties {
+/* Only our selected companion sets this attribute. Native layout edits are Home-only. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] {
+  color-scheme:dark!important;
+  --dream-art:none!important;
+  --dream-canvas:#121725!important;--dream-surface:#191f30!important;--dream-surface-raised:#20283d!important;
+  --dream-sidebar:#151b2b!important;--dream-text:#dde2f2!important;--dream-text-muted:#a8b1ca!important;
+  --dream-accent:#b6a4e8!important;--dream-line:#626e89!important;--dream-line-soft:#b6a4e833!important;
+  --dream-accent-soft:#b6a4e81f!important;--dream-accent-hover:#b6a4e833!important;
+  --angel-blue:#8c9fc9!important;--angel-cyan:#7abbe4!important;--angel-pink:#b6a4e8!important;--angel-violet:#a18dcd!important;
+  --angel-ink:#121725!important;--angel-paper:#dde2f2!important;--angel-pixel-shadow:none!important;--angel-soft-shadow:0 12px 34px #050b1b33!important;
+  --color-token-dropdown-background:#20283d!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] body {
+  isolation:isolate;background:#121725!important;background-image:none!important;color:#dde2f2!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(main.bg-surface,main.main-surface,main[data-app-shell-main-surface],main[class*="_MainContentSurface_"],[data-ds-part="main"],.dream-home,.dream-task,[data-ds-part="home"],[data-ds-part="thread"]) {
+  background:transparent!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(body>div>[class*="_PageSurfaceLayout_"],[data-app-shell-page-surface="true"],[data-app-shell-focus-area]>.bg-surface,[data-app-shell-pane-frame],[data-app-shell-focus-area="main"]>div>[class~="h-full"][class~="electron:bg-surface"]) {background:transparent!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-task::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-home::before {background-image:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(aside.app-shell-left-panel,[data-ds-part="sidebar"],[data-testid="app-shell-floating-left-panel"]) {
+  background:radial-gradient(ellipse at 8% 12%,#66507840,transparent 48%),radial-gradient(ellipse at 5% 91%,#32647c3b,transparent 52%),linear-gradient(180deg,#151b2b77,#121c2b99)!important;
+  border-color:#b6a4e83d!important;box-shadow:inset -1px 0 #dde2f21c!important;backdrop-filter:blur(10px)!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(aside.app-shell-left-panel,[data-ds-part="sidebar"],[data-testid="app-shell-floating-left-panel"]) nav {background:transparent!important;background-image:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="thread"] :is(.thread-scroll-container,[data-ds-part="thread"]) {
+  background:linear-gradient(90deg,#121725eb,#121725db 65%,#12172555)!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(.composer-surface-chrome,[data-composer-surface-variant],[data-ds-part="composer"],[data-angel-component="composer"]) {
+  background:#191f30!important;border-color:#a398bd66!important;outline:none!important;
+  box-shadow:inset 0 1px #dde2f20d,0 12px 38px #050b1b45!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(pre,[data-ds-part="code"],.xterm,[role="menu"],[role="listbox"],[role="dialog"]) {background-color:#171e2e!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] pre {border-color:#b6a4e83d!important}
+/* Current Owl markdown code blocks use DIV surfaces rather than PRE. Paint
+   the actual code shell once; retain token colors and copy/header controls. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] [data-code-block="true"] {background:#171e2e!important;border-color:#b6a4e83d!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] [data-code-block="true"] :is([data-code-block-source="true"],code) {background:transparent!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] [data-ds-part="message"] {background-color:#191f30!important}
+/* NGO generated/native suggestion labels inherit their real button's text
+   color. Its built-in verifier requires the same computed foreground. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(.angel-preset-card,.dream-generated-preset,.dream-codex-preset) {--angel-preset-color:#b6a4e8;color:#dde2f2!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(.angel-preset-card,.dream-generated-preset,.dream-codex-preset) :is(span,strong,small,i,em) {color:inherit!important}
+/* Preserve the native Home title/editor/buttons in a left column. The Owl
+   group contains the real heading and composer; the engine deck is its sibling. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home {
+  --smp-home-column:min(50%,720px);--smp-home-inset:32px;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] {
+  width:var(--smp-home-column)!important;max-width:calc(100% - 48px)!important;
+  flex:0 0 auto!important;height:auto!important;min-height:0!important;
+  margin:0 0 0 var(--smp-home-inset)!important;padding:24px 0 0!important;align-self:flex-start!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] [class~="grow"][class~="basis-0"] {
+  flex:0 0 auto!important;min-height:0!important;padding:0!important;align-items:flex-start!important;justify-content:flex-start!important;
+}
+/* The bottom native flex-column has an unclassed React bridge. It must
+   stretch: flex-start would shrink the whole editor/toolbar to icon width. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] [class~="grow"][class~="basis-0"][class~="flex-col"]:has([data-ds-part="composer"]) {
+  align-items:stretch!important;width:100%!important;height:auto!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] [class~="grow"][class~="basis-0"][class~="flex-col"]:has([data-ds-part="composer"]) div:has([data-ds-part="composer"]) {
+  width:100%!important;max-width:100%!important;align-self:stretch!important;
+}
+/* Measured native Home has an empty suggestion spacer immediately before
+   the editor bridge. Its -mt-16 pulls the following editor up by 64px; the
+   normal-flow left composition releases that spacer's legacy overlap. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] [class~="grow"][class~="basis-0"][class~="flex-col"]:has([data-ds-part="composer"]) > [class~="-mt-16"] {margin-top:0!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] div:has(>[data-ds-part="home-hero"]) {align-items:flex-start!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] :is([class~="min-h-28"],[class~="mx-auto"]):has([data-ds-part="home-hero"]) {
+  min-height:0!important;width:100%!important;margin:0!important;padding:0!important;justify-content:flex-start!important;align-items:flex-start!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home [data-ds-part="home-hero"] {
+  align-items:flex-start!important;text-align:left!important;justify-content:flex-start!important;
+  font-size:clamp(25px,2.4vw,40px)!important;line-height:1.35!important;margin-bottom:20px!important;text-shadow:none!important;filter:none!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"] [class*="--thread-content-max-width:var("] {
+  max-width:100%!important;width:100%!important;margin-inline:0!important;padding-inline:0!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home #codex-dream-skin-presets {
+  position:relative!important;inset:auto!important;top:auto!important;left:auto!important;
+  width:var(--smp-home-column)!important;max-width:calc(100% - 48px)!important;
+  margin:12px 0 28px var(--smp-home-inset)!important;flex:0 0 auto!important;z-index:1!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home .dream-presets-grid,
+html.codex-dream-skin:not(.dream-presets-ready)[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home .dream-native-suggestions-root {
+  display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;
+}
+/* NGO's compact home-main-content query pins both row tracks to 56px.
+   Our four 96px cards need matching tracks even in a 900x720 window. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home #codex-dream-skin-presets .dream-presets-grid {
+  grid-template-rows:repeat(2,minmax(96px,auto))!important;grid-auto-rows:minmax(96px,auto)!important;
+  height:auto!important;min-height:0!important;max-height:none!important;align-content:start!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-codex-preset {
+  --angel-preset-color:#b6a4e8!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;
+  min-width:0!important;width:100%!important;min-height:96px!important;height:auto!important;max-height:none!important;
+  padding:14px 15px!important;gap:8px!important;border:1px solid #c2bcdf40!important;border-radius:10px!important;
+  background:linear-gradient(135deg,#262d43f5,#192237f5)!important;box-shadow:inset 0 1px #dde2f208!important;
+  transform:none!important;translate:none!important;filter:none!important;animation:none!important;text-shadow:none!important;
+}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-codex-preset:hover {border-color:#b6a4e899!important;background:linear-gradient(135deg,#30364bf5,#202a40f5)!important;box-shadow:inset 0 1px #dde2f20d!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-codex-preset::before {background:none!important;opacity:0!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-codex-preset::after {content:none!important;display:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home :is(.dream-presets-heading,.dream-preset-channel,.dream-preset-icon i,button.dream-generated-preset>em) {display:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home .dream-preset-icon {width:25px!important;height:25px!important;background:none!important;border:0!important;box-shadow:none!important;flex:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-codex-preset svg {color:#b6a4e8!important;filter:none!important;width:22px!important;height:22px!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-generated-preset strong {font-size:12px!important;line-height:1.5!important;font-weight:500!important;text-shadow:none!important;text-wrap:pretty!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home button.dream-generated-preset small {display:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(button,[role="button"]):focus-visible {outline:2px solid #7abbe4!important;outline-offset:2px}
+/* These IDs and pseudo elements are decorations owned by the pinned NGO
+   renderer, not native app controls. Hide them while our companion is active. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(#codex-dream-skin-chrome,#codex-dream-sidebar-ornaments,#codex-dream-side-workspace-brand,.dream-side-workspace-brand) {display:none!important}
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] main:is(.main-surface,[data-app-shell-main-surface],[class*="_MainContentSurface_"]).dream-home-shell::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-home [data-feature="game-source"]::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-home .dream-home-utility::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :is(aside.app-shell-left-panel,[data-testid="app-shell-floating-left-panel"]) button[class~="group/section-toggle"]::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] main:is(.main-surface,[data-app-shell-main-surface],[class*="_MainContentSurface_"]).dream-home-shell > header:is(.app-header-tint,[data-app-shell-header-edge-scroll],[data-app-shell-application-menu-bar],[class*="_Header_"])::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] main:is(.main-surface,[data-app-shell-main-surface],[class*="_MainContentSurface_"]).dream-home-shell > header:is(.app-header-tint,[data-app-shell-header-edge-scroll],[data-app-shell-application-menu-bar],[class*="_Header_"])::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-home > div:first-child:not([class~="group/home-composer-layout"]) > div:first-child > div:first-child::after {content:none!important;display:none!important}
+/* Other NGO broadcast labels are pseudo elements only. Keep their native
+   context/goal/settings/workspace/subagent surfaces and functional labels. */
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-composer-context-strip::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-active-goal-strip::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :where(.dream-turn-preview-surface,[role="tooltip"] div[class~="w-80"][class*="bg-token-dropdown-background"])::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-settings-content::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] :where(.dream-settings-surface,.dream-settings-content div[class~="flex"][class~="flex-col"][class~="overflow-hidden"][class~="rounded-2xl"])::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-side-workspace::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-side-workspace::after,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-subagent-section-live>h2::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-subagent-scroller>section:first-child>h2::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-subagent-section-archive>h2::before,
+html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace] .dream-subagent-scroller>section[class~="mt-6"]>h2::before {content:none!important;display:none!important}
+.smp-scene,.smp-scene * {box-sizing:border-box;pointer-events:none!important;user-select:none!important}
+.smp-scene {position:fixed;inset:0;z-index:-1;overflow:hidden;background:#121725;contain:strict;--smp-amplitude:.45}
+.smp-background,.smp-base-shade,.smp-atmosphere,.smp-atmosphere-colors,.smp-reading-shade {position:absolute;inset:0}
+.smp-background {background-size:cover;background-position:center;opacity:.78}
+.smp-base-shade {background:linear-gradient(90deg,#0c121ff5,#0f1523de 30%,#10172666 61%,#10172614 86%),linear-gradient(0deg,#101725,transparent 25%,transparent 85%,#0d142133)}
+.smp-atmosphere {right:auto;width:66%;overflow:hidden;mask-image:linear-gradient(90deg,#000 69%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 69%,transparent)}
+.smp-atmosphere-colors {background:radial-gradient(ellipse at 14% 17%,#665078a8, #45395c69 29%,transparent 58%),radial-gradient(ellipse at 77% 53%,#523d789e,#3c2c6257 35%,transparent 68%),radial-gradient(ellipse at 6% 90%,#32647caa,#213d5878 30%,transparent 62%),linear-gradient(145deg,#29345570,#211c3b30 54%,#17384c63)}
+.smp-atmosphere-art {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center;opacity:.44;filter:saturate(.8) brightness(.78)}
+.smp-reading-shade {background:radial-gradient(ellipse at 47% 42%,#11172882,#11172840 35%,transparent 65%),linear-gradient(0deg,#10172575,transparent 24%,transparent 85%,#10172520)}
+.smp-crest {position:absolute;width:clamp(170px,19vw,375px);height:auto;left:31%;top:17%;opacity:.08}
+.smp-character {position:absolute;right:2vw;top:auto;bottom:2vh;height:min(85vh,132vw);aspect-ratio:2/3;opacity:.94;filter:drop-shadow(0 0 28px #b6a4e814);transition:opacity .45s ease}
+.smp-canvas {position:absolute;inset:0;aspect-ratio:2/3;overflow:visible}
+.smp-layer {position:absolute;display:block;object-fit:contain;object-position:top left;max-width:none;animation-timing-function:ease-in-out;animation-iteration-count:infinite}
+.smp-layer[data-smp-motion="hair"] {animation-name:smp-hair}
+.smp-layer[data-smp-motion="sleeve"] {animation-name:smp-sleeve}
+.smp-layer[data-smp-motion="wing"] {animation-name:smp-wing}
+.smp-layer[data-smp-motion="tail"] {animation-name:smp-tail}
+.smp-breath {animation-name:smp-breath;mask-image:radial-gradient(ellipse 16% 11% at 51% 29%,#000 58%,transparent);-webkit-mask-image:radial-gradient(ellipse 16% 11% at 51% 29%,#000 58%,transparent)}
+.smp-eyes {position:absolute;inset:0;display:block;width:100%;height:100%;z-index:80}
+.smp-halo {position:absolute;left:50%;top:25%;width:30%;aspect-ratio:1;border:1px solid #bab0e452;border-radius:50%;opacity:0;transform:translate(-50%,-50%);box-shadow:0 0 30px #b9aae91a,inset 0 0 20px #b9aae912;z-index:2}
+.smp-halo::before,.smp-halo::after {content:"";position:absolute;inset:14%;border:1px solid #bab0e442;transform:rotate(45deg)}
+.smp-halo::after {inset:-5%;transform:rotate(20deg);border-color:#bab0e41f}
+.smp-scene[data-smp-mode="full"] {--smp-amplitude:1}
+.smp-scene[data-smp-running="false"] .smp-layer {animation-play-state:paused!important}
+.smp-scene[data-smp-mode="off"] .smp-layer {animation:none!important}
+.smp-scene:is([data-smp-state="busy"],[data-smp-state="streaming"])[data-smp-running="true"] .smp-halo {opacity:.64;animation:smp-halo-turn 24s linear infinite}
+.smp-scene[data-smp-state="needs-attention"] .smp-halo {opacity:.48;border-color:#d4c59f99;box-shadow:none}
+.smp-scene[data-smp-state="failed"] .smp-halo {opacity:.48;border-color:#d8abb999;box-shadow:none}
+.smp-scene[data-smp-complete="true"] .smp-halo {animation:smp-complete 1.4s ease-out 1}
+.smp-scene[data-smp-mode="off"] .smp-halo {animation:none!important}
+.smp-scene[data-smp-quiet="true"] .smp-halo {opacity:0!important;animation:none!important}
+.smp-scene[data-smp-quiet="true"] .smp-character {opacity:.58}
+.smp-scene[data-smp-route="thread"] .smp-character {right:-5vw;top:125px;bottom:auto;height:165vh;opacity:.5;filter:brightness(.8) saturate(.65)}
+.smp-scene[data-smp-route="thread"] .smp-background {opacity:.45}
+.smp-scene[data-smp-route="thread"] .smp-atmosphere {opacity:.72}
+.smp-scene[data-smp-route="thread"] .smp-base-shade {background:linear-gradient(90deg,#101725f5,#101725c9 48%,#10172599),linear-gradient(0deg,#101725,transparent 60%)}
+.smp-scene[data-smp-route="thread"][data-smp-quiet="true"] .smp-character {opacity:.27}
+.smp-scene[data-smp-route="other"] .smp-character {opacity:.12}
+@keyframes smp-breath {0%,100%{transform:scaleY(1)}50%{transform:scaleY(calc(1 + .003 * var(--smp-amplitude)))}}
+@keyframes smp-hair {0%,100%{transform:rotate(calc(-.45deg * var(--smp-amplitude)))}50%{transform:rotate(calc(.45deg * var(--smp-amplitude)))}}
+@keyframes smp-sleeve {0%,100%{transform:rotate(calc(-.5deg * var(--smp-amplitude))) translateY(0)}50%{transform:rotate(calc(.5deg * var(--smp-amplitude))) translateY(calc(2px * var(--smp-amplitude)))}}
+@keyframes smp-wing {0%,100%{transform:rotate(calc(-.45deg * var(--smp-amplitude)))}50%{transform:rotate(calc(.65deg * var(--smp-amplitude)))}}
+@keyframes smp-tail {0%,100%{transform:rotate(calc(-.6deg * var(--smp-amplitude)))}50%{transform:rotate(calc(.7deg * var(--smp-amplitude)))}}
+@keyframes smp-halo-turn {from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes smp-complete {0%{opacity:0;transform:translate(-50%,-50%) scale(.95)}25%{opacity:.85}100%{opacity:0;transform:translate(-50%,-50%) scale(1.16)}}
+@media(min-width:2000px) {.smp-character{right:3vw}.smp-scene[data-smp-route="thread"] .smp-character{top:180px}}
+@media(max-width:1450px) {.smp-character{right:2vw;opacity:.9}.smp-scene[data-smp-route="thread"] .smp-character{right:-13vw;opacity:.35}}
+@media(max-width:1100px) {.smp-character{right:1vw;opacity:.27}.smp-atmosphere{width:85%;opacity:.78}.smp-atmosphere-art{opacity:.32}.smp-scene[data-smp-route="thread"] .smp-character{right:-35vw;opacity:.16}.smp-scene[data-smp-quiet="true"] .smp-character{opacity:.15}
+  html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home {--smp-home-column:min(600px,calc(100% - 48px))}
+}
+@media(max-width:760px) {.smp-character{right:1vw;opacity:.18}.smp-atmosphere{width:100%;opacity:.55}.smp-atmosphere-art{opacity:.2}.smp-crest{opacity:.04}.smp-scene[data-smp-route="thread"] .smp-character{right:-75vw;opacity:.1}.smp-scene[data-smp-quiet="true"] .smp-character{opacity:.1}.smp-scene[data-smp-route="thread"][data-smp-quiet="true"] .smp-character{opacity:.07}
+  html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home {--smp-home-inset:16px;--smp-home-column:calc(100% - 32px)}
+  html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home > [class~="group/home-composer-layout"],
+  html.codex-dream-skin[data-dream-skin="active"][data-silver-moon-palace][data-smp-route="home"] .dream-home #codex-dream-skin-presets {max-width:calc(100% - 32px)!important}
+}
+@media(prefers-reduced-motion:reduce) {.smp-layer,.smp-halo{animation:none!important}.smp-character{transition:none!important}}
+}

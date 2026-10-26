@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "silver-dragon-moon-palace",
+  "name": "白银龙娘 · 月夜晶宫（测试版）",
+  "brandSubtitle": "SILVER DRAGON // MOON PALACE",
+  "tagline": "月光落在晶宫，思绪在此成形。",
+  "projectPrefix": "MOON ARCHIVE // ",
+  "projectLabel": "选择项目",
+  "statusText": "月夜晶宫",
+  "quote": "循着月光，写下新的篇章。",
+  "image": "background.png",
+  "appearance": "dark",
+  "art": {
+    "focusX": 0.72,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "off"
+  },
+  "colors": {
+    "background": "#121725",
+    "panel": "#191F30",
+    "panelAlt": "#20283D",
+    "accent": "#B6A4E8",
+    "accentAlt": "#7ABBE4",
+    "secondary": "#A8B1CA",
+    "highlight": "#DDE2F2",
+    "text": "#DDE2F2",
+    "muted": "#A8B1CA",
+    "line": "#626E89"
+  }
+}

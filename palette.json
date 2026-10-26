@@ -1,0 +1,16 @@
+{
+  "name": "白银龙娘 · 月夜晶宫",
+  "version": "1.0.0",
+  "colors": {
+    "night": { "hex": "#121725", "usage": "页面、正文与代码的稳定深色基底" },
+    "silver": { "hex": "#DDE2F2", "usage": "主要文字、细银线、月光" },
+    "lavender": { "hex": "#B6A4E8", "usage": "选中项、水晶、主强调色" },
+    "ice": { "hex": "#7ABBE4", "usage": "少量状态和焦点高亮" },
+    "panel": { "hex": "#191F30", "usage": "正文与输入框面板" },
+    "panelAlt": { "hex": "#20283D", "usage": "次级面板与悬停" },
+    "muted": { "hex": "#A8B1CA", "usage": "辅助说明" },
+    "line": { "hex": "#626E89", "usage": "银灰边界" },
+    "attention": { "hex": "#E1C899", "usage": "等待确认，静态文字与图标" },
+    "error": { "hex": "#EDB4C5", "usage": "失败，静态文字与图标" }
+  }
+}

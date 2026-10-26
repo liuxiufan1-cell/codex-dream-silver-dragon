@@ -1,0 +1,21 @@
+{
+  "name": "codex-dream-silver-dragon",
+  "version": "1.0.0-beta.1",
+  "private": true,
+  "description": "白银龙娘 · 月夜晶宫（测试版）：分层动态组件、静态主题与独立模拟预览",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "preview": "node server.mjs",
+    "build": "node scripts/build-runtime.mjs",
+    "test": "node scripts/build-runtime.mjs && node tests/test-runtime-state.mjs && node tests/test-runtime-native.mjs && node tests/test-ui-state.mjs && node scripts/verify-source.mjs",
+    "render:concepts": "node scripts/render-concepts.mjs",
+    "generate:eyes": "node scripts/generate-eyes.mjs",
+    "package": "node scripts/package-source.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}

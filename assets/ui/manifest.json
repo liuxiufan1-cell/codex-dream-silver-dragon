@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "name": "白银龙娘左侧界面元素",
+  "palette": ["#121725", "#DDE2F2", "#B6A4E8", "#7ABBE4"],
+  "motion": "static",
+  "interaction": "Decorative images do not receive focus or pointer events; existing parent buttons provide demonstration prompt actions.",
+  "assets": [
+    {"file": "dragon-crest.svg", "role": "Segmented outward horns, silver wing bones, lavender membrane and six-petal silver knot; brand and low-contrast hero emblem", "source": "Authored native SVG UI ornament"},
+    {"file": "dragon-horns.svg", "role": "White segmented horn pair for first prompt card", "source": "Authored native SVG UI ornament"},
+    {"file": "dragon-wing.svg", "role": "Single dragon membrane wing for second prompt card and subtle corners", "source": "Authored native SVG UI ornament"},
+    {"file": "dragon-tail.svg", "role": "Curled silver scaled tail for third prompt card", "source": "Authored native SVG UI ornament"},
+    {"file": "dragon-scales.svg", "role": "Softly pointed scale-line repeat", "source": "Authored native SVG UI ornament"},
+    {"file": "silver-knot.svg", "role": "Six ordered interlaced loops and small center ring", "source": "Authored native SVG UI ornament"},
+    {"file": "dragon-portrait-medallion.svg", "role": "Sidebar and profile portrait medallion", "source": "Existing assets/layers/core.png embedded unchanged inside a declared SVG circular clip; no raster edits"}
+  ],
+  "boundary": "Independent design preview and inert offline SVG concepts only. No installed Codex, skin, original artwork or startup entry was modified."
+}
