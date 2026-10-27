@@ -78,11 +78,6 @@ export function mountMoonPalace(win, doc, payload) {
   const background = make('div', 'smp-background');
   background.style.backgroundImage = `url("${payload.assets[payload.manifest.background]}")`;
   const shade = make('div', 'smp-base-shade');
-  const atmosphere = make('div', 'smp-atmosphere');
-  const colors = make('div', 'smp-atmosphere-colors');
-  const mural = image('smp-atmosphere-art', 'assets/art/left-dragon-atmosphere-v4.png');
-  const reading = make('div', 'smp-reading-shade');
-  atmosphere.append(colors, mural, reading);
   const crest = image('smp-crest', 'assets/ui/dragon-crest.svg');
   const character = make('div', 'smp-character');
   const canvas = make('div', 'smp-canvas');
@@ -111,7 +106,7 @@ export function mountMoonPalace(win, doc, payload) {
   });
   const halo = make('div', 'smp-halo'); canvas.appendChild(halo);
   character.appendChild(canvas);
-  scene.append(background, shade, atmosphere, crest, character);
+  scene.append(background, shade, crest, character);
   doc.body.prepend(scene);
   attr(root, 'data-silver-moon-palace', payload.version);
 

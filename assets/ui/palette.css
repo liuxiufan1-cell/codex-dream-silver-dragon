@@ -1,0 +1,13 @@
+/* Generated from palette.json. */
+:root {
+  --smp-canvas: #FAF9FD;
+  --smp-surface: #FFFFFF;
+  --smp-raised: #F0EAF8;
+  --smp-ink: #302B3B;
+  --smp-muted: #71677F;
+  --smp-accent: #8B65C2;
+  --smp-focus: #7651AF;
+  --smp-line: #DED5EA;
+  --smp-attention: #916200;
+  --smp-error: #B54065;
+}

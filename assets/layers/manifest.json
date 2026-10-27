@@ -1,23 +1,23 @@
 {
   "version": 1,
-  "name": "白银龙娘 · 月夜晶宫",
+  "name": "白银龙娘 · 紫晶白昼",
   "canvas": {
     "width": 1024,
     "height": 1536
   },
   "background": "assets/art/moon-palace-background.png",
-  "coordinateSystem": "Canvas coordinates in pixels; pivot is local displayed layer pixels. SVG bilateral layers embed generated PNG and mirror it non-destructively.",
+  "coordinateSystem": "Full 1024×1536 shared canvas; local pixel pivots. Complementary cutout regions have subpixel motion.",
   "layers": [
     {
       "id": "tail",
       "src": "assets/layers/tail.png",
-      "x": 580,
-      "y": 585,
-      "width": 425,
-      "height": 637.5,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        125,
-        35
+        850,
+        1080
       ],
       "z": 3,
       "motion": "tail",
@@ -26,13 +26,13 @@
     {
       "id": "left-wing",
       "src": "assets/layers/left-wing.png",
-      "x": 30,
-      "y": 370,
-      "width": 450,
-      "height": 450,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        383,
-        49
+        380,
+        330
       ],
       "z": 5,
       "motion": "wing",
@@ -41,34 +41,32 @@
     {
       "id": "right-wing",
       "src": "assets/layers/right-wing.svg",
-      "x": 544,
-      "y": 370,
-      "width": 450,
-      "height": 450,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        67,
-        49
+        830,
+        380
       ],
       "z": 6,
       "motion": "wing",
-      "duration": 11.7,
-      "derivative": "Embedded mirrored copy of left-wing.png"
+      "duration": 11.7
     },
     {
       "id": "back-hair",
       "src": "assets/layers/back-hair.svg",
-      "x": 150,
-      "y": 15,
-      "width": 724,
-      "height": 1086,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        362,
-        140
+        800,
+        550
       ],
       "z": 20,
       "motion": "hair",
-      "duration": 8.7,
-      "derivative": "Self-contained PNG clip below raw y190; hides duplicate crown/curl behind stable core hair cap; source PNG preserved."
+      "duration": 8.7
     },
     {
       "id": "core",
@@ -83,18 +81,18 @@
       ],
       "z": 30,
       "motion": "none",
-      "contains": "Stable head, face, horns, cap/bangs, neck, torso, bare arms/hands, legs, central gown. No detachable appendages."
+      "contains": "Stable adult seated figure, face, hands, legs and central gown."
     },
     {
       "id": "left-sleeve",
       "src": "assets/layers/left-sleeve.png",
-      "x": 55,
-      "y": 300,
-      "width": 533,
-      "height": 799.5,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        333,
-        70
+        360,
+        490
       ],
       "z": 40,
       "motion": "sleeve",
@@ -103,29 +101,28 @@
     {
       "id": "right-sleeve",
       "src": "assets/layers/right-sleeve.svg",
-      "x": 436,
-      "y": 300,
-      "width": 533,
-      "height": 799.5,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        200,
-        70
+        780,
+        570
       ],
       "z": 41,
       "motion": "sleeve",
-      "duration": 8.3,
-      "derivative": "Embedded mirrored copy of left-sleeve.png"
+      "duration": 8.3
     },
     {
       "id": "front-hair",
       "src": "assets/layers/front-hair.png",
-      "x": 290,
-      "y": 170,
-      "width": 444,
-      "height": 666,
+      "x": 0,
+      "y": 0,
+      "width": 1024,
+      "height": 1536,
       "pivot": [
-        222,
-        50
+        735,
+        265
       ],
       "z": 50,
       "motion": "hair",
@@ -134,27 +131,28 @@
   ],
   "eyes": {
     "left": {
-      "cx": 480,
-      "cy": 190,
-      "width": 39,
-      "height": 18,
-      "rotation": -7
+      "cx": 531,
+      "cy": 258,
+      "width": 43,
+      "height": 21,
+      "rotation": -13
     },
     "right": {
-      "cx": 549,
-      "cy": 182,
-      "width": 36,
-      "height": 17,
-      "rotation": -7
+      "cx": 614,
+      "cy": 232,
+      "width": 37,
+      "height": 20,
+      "rotation": -13
     },
-    "note": "Approximate hand-calibrated SVG eyelid overlay targets on generated core. This is derived art, not pixel-identical reference. Normal eyes are in core. UI preview authors half and closed shape."
+    "note": "Calibrated on seated-source.png, 1024 × 1536. Normal eyes remain in stable core."
   },
-  "alpha": "All PNG character layers generated with native alpha, no background removal. Bilateral SVGs embed PNG alpha and apply mirror transform.",
+  "alpha": "Native alpha source; complementary vector masks partition tips without moving the face. No independent regeneration of facial features.",
   "blink": {
     "assets": {
       "half": "assets/layers/eyes-half.svg",
       "closed": "assets/layers/eyes-closed.svg"
     },
     "note": "Shared feathered vector eyelid overlays. Normal eyes remain in stable core PNG. Offline alignment specimens use these exact same SVGs."
-  }
+  },
+  "pose": "seated"
 }

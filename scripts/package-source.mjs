@@ -8,7 +8,7 @@ await import('./build-runtime.mjs');
 await import('./verify-source.mjs');
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const entries = await Promise.all((await sourceFiles()).map(async name => ({name, bytes:await fs.readFile(path.join(root,name))})));
-const version = '1.0.0-beta.1', prefix = 'codex-dream-silver-dragon';
+const version = '1.0.0-beta.2', prefix = 'codex-dream-silver-dragon';
 const out = path.join(root, 'release', `v${version}`);
 await fs.mkdir(out, {recursive:true});
 const info=[];

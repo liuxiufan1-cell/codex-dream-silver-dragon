@@ -1,64 +1,61 @@
 [data-ds-part="root"] {
-  color: #DDE2F2;
-  background-color: #121725;
+  color: #302B3B;
+  background-color: #FAF9FD;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="sidebar"] {
-  background-color: #121725;
-  border-color: #626E89;
+  color: #302B3B;
+  background-color: #FAF9FD;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="header"] {
-  background-color: #191F30;
-  color: #DDE2F2;
-  border-color: #626E89;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="home-hero"] {
-  color: #DDE2F2;
+  color: #302B3B;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="project-list"] {
-  color: #DDE2F2;
-  background-color: #191F30;
-  border-color: #626E89;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 16px;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="thread"] {
-  background-color: #121725;
-  color: #DDE2F2;
-  border-radius: 16px;
+  color: #302B3B;
+  background-color: #FAF9FD;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="message"] {
-  background-color: #191F30;
-  color: #DDE2F2;
-  border-radius: 16px;
-  line-height: 1.6;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="composer"] {
-  color: #DDE2F2;
-  background-color: #191F30;
-  border-color: #B6A4E8;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 20px;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="composer-toolbar"] {
-  color: #DDE2F2;
-  background-color: #191F30;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
 [data-ds-part="dialog"] {
-  color: #DDE2F2;
-  background-color: #191F30;
-  border-color: #626E89;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 20px;
+  color: #302B3B;
+  background-color: #FFFFFF;
+  border-color: #DED5EA;
+  border-radius: 12px;
 }
-[data-ds-part="project-list"]:hover {
-  background-color: #20283D;
-  border-color: #B6A4E8;
-  transition-property: background-color, border-color;
-  transition-duration: 180ms;
-}
-[data-ds-part="composer"]:focus-visible {
-  border-color: #7ABBE4;
-}
+[data-ds-part="project-list"]:hover { background-color: #F0EAF8; }
+[data-ds-part="composer"]:focus-visible { border-color: #7651AF; }
