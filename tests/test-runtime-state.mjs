@@ -37,8 +37,8 @@ function fixture(){
  win.__CODEX_DREAM_SKIN_MOTION_STATE__={inspect:()=>({...hostState})};
  const context=vm.createContext({Math:Object.assign(Object.create(Math),{random:()=>.5}),Set,Date});
  vm.runInContext(source.replace('export function mountMoonPalace(', 'function mountMoonPalace(')+'\nthis.mount=mountMoonPalace;',context);
- const payload={schema:'silver-dragon-runtime/1',themeId:'silver-dragon-moon-palace',version:'1.0.0-beta.1',manifest,css,
-  assets:Object.fromEntries([manifest.background,'assets/art/left-dragon-atmosphere-v4.png','assets/ui/dragon-crest.svg',...manifest.layers.map(n=>n.src),...Object.values(manifest.blink.assets)].map(p=>[p,'data:image/png;base64,AA==']))};
+ const payload={schema:'silver-dragon-runtime/1',themeId:'silver-dragon-moon-palace',version:'1.0.0-beta.2',manifest,css,
+  assets:Object.fromEntries([manifest.background,'assets/ui/dragon-crest.svg',...manifest.layers.map(n=>n.src),...Object.values(manifest.blink.assets)].map(p=>[p,'data:image/png;base64,AA==']))};
  const mount=()=>context.mount(win,doc,payload);
  function advance(ms){const end=now+ms;for(let count=0;;count++){if(count>10000)throw new Error('Unbounded timers');const due=[...timers].filter(([,t])=>t.at<=end).sort((a,b)=>a[1].at-b[1].at)[0];if(!due)break;now=due[1].at;timers.delete(due[0]);due[1].fn();}now=end;}
  function notify(){for(const o of observers.filter(o=>!o.disconnected))o.fn([{target:doc.body}]);advance(16);}
@@ -51,7 +51,7 @@ assert('Native host exact custom theme is required',api?.inspect().themeId==='si
 assert('Eight layers plus two eyelids load from embedded assets',api.inspect().layerCount===8&&api.inspect().loadedLayers===8&&api.inspect().eyesReady);
 const nodes=f.all();const core=nodes.find(n=>n.getAttribute('data-smp-layer')==='core');
 assert('Core head and face have no animation binding',core.getAttribute('data-smp-motion')==='none'&&core.style.transformOrigin==='50% 47.52604166666667%');
-assert('Breath is a separate feathered torso-only clone',nodes.filter(n=>n.getAttribute('data-smp-layer')==='breathing-body').length===1&&css.includes('ellipse 16% 11% at 51% 29%'));
+assert('Breath is a separate feathered torso-only clone',nodes.filter(n=>n.getAttribute('data-smp-layer')==='breathing-body').length===1&&css.includes('ellipse 13% 9% at 59% 34%'));
 assert('Manifest durations are applied without changing native content',manifest.layers.every(l=>nodes.find(n=>n.getAttribute('data-smp-layer')===l.id).style.animationDuration===`${l.duration||6}s`));
 f.advance(6500);
 assert('Blink timer reaches half-closed eyes after 5-8 seconds',nodes.some(n=>n.getAttribute('data-smp-eye')==='half'&&n.style.opacity==='1')&&api.inspect().blinkCount===1);
@@ -77,7 +77,7 @@ assert('Failure remains static and never triggers success',api.inspect().state==
 const menu=new f.Node();menu.setAttribute('role','menu');f.setMenus([menu]);
 assert('Native open menu quiets all decorative movement',api.inspect().quiet);
 f.setMenus([]);f.update({route:'thread',state:'unknown',taskBound:false});f.advance(900);
-assert('Real host thread route chooses half-body layout',api.inspect().route==='thread'&&f.doc.documentElement.getAttribute('data-smp-route')==='thread'&&css.includes('height:165vh'));
+assert('Real host thread route chooses compact seated layout',api.inspect().route==='thread'&&f.doc.documentElement.getAttribute('data-smp-route')==='thread'&&css.includes('height:52vh'));
 f.doc.emit('scroll');f.advance(100);
 assert('Scrolling quiets decoration without moving transcript',api.inspect().quiet);
 f.advance(600);f.update({mode:'off'});const count=api.inspect().blinkCount;f.advance(9000);

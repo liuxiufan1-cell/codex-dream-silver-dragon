@@ -66,7 +66,7 @@ function fixture(){
  win.__CODEX_DREAM_SKIN_MOTION_STATE__={inspect:()=>({...hostState})};
  const context=vm.createContext({Math:Object.assign(Object.create(Math),{random:()=>.5}),Set,Map,Date,encodeURIComponent,decodeURIComponent});
  vm.runInContext(source.replace('export function mountMoonPalace(','function mountMoonPalace(')+'\nthis.mount=mountMoonPalace;',context);
- const payload={schema:'silver-dragon-runtime/1',themeId:'silver-dragon-moon-palace',version:'1.0.0-beta.1',manifest,css,assets:Object.fromEntries([manifest.background,'assets/art/left-dragon-atmosphere-v4.png','assets/ui/dragon-crest.svg',...manifest.layers.map(n=>n.src),...Object.values(manifest.blink.assets)].map(p=>[p,'data:image/png;base64,AA==']))};
+ const payload={schema:'silver-dragon-runtime/1',themeId:'silver-dragon-moon-palace',version:'1.0.0-beta.2',manifest,css,assets:Object.fromEntries([manifest.background,'assets/ui/dragon-crest.svg',...manifest.layers.map(n=>n.src),...Object.values(manifest.blink.assets)].map(p=>[p,'data:image/png;base64,AA==']))};
  function advance(ms){const end=now+ms;for(let count=0;;count++){if(count>10000)throw Error('Unbounded timer loop');const next=[...timers].filter(([,t])=>t.at<=end).sort((a,b)=>a[1].at-b[1].at)[0];if(!next)break;now=next[1].at;timers.delete(next[0]);next[1].fn();}now=end;}
  function notify(){for(const observer of observers.filter(o=>!o.disconnected))observer.fn([{target:doc.body}]);advance(16);}
  const mount=()=>context.mount(win,doc,payload);

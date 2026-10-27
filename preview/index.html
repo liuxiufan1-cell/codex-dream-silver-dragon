@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#121725">
-  <title>白银龙娘 · 月夜晶宫（测试版）— 独立动态预览</title>
+  <meta name="theme-color" content="#FAF9FD">
+  <title>白银龙娘 · 紫晶白昼（测试版）— 独立动态预览</title>
+  <link rel="stylesheet" href="assets/ui/palette.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-view="home" data-motion="subtle" data-task="idle">
@@ -22,17 +23,17 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h12v13H8ZM16 8V3H3v13h5"/></symbol>
   </defs></svg>
-  <div class="scenery" aria-hidden="true"><div class="scenery-image"></div><div class="scenery-shade"></div><div class="left-atmosphere"><div class="atmosphere-color"></div><img class="atmosphere-art" src="assets/art/left-dragon-atmosphere-v4.png" alt="" aria-hidden="true"><div class="atmosphere-reading-shade"></div></div><div class="moon-haze"></div><div class="starfield"></div></div>
+  <div class="scenery" aria-hidden="true"><div class="scenery-image"></div><div class="scenery-shade"></div><div class="moon-haze"></div><div class="starfield"></div></div>
   <div id="character" class="character" aria-hidden="true"><div class="character-canvas" id="character-canvas"></div><div class="crystal-halo"></div></div>
   <div class="app-shell">
     <aside class="sidebar" aria-label="预览侧栏">
-      <button class="brand" id="brand-home" aria-label="返回首页"><span class="brand-mark dragon-brand"><img src="assets/ui/dragon-crest.svg" alt="" aria-hidden="true"></span><span>月夜晶宫<small>MOONLIT SANCTUARY</small></span></button>
+      <button class="brand" id="brand-home" aria-label="返回首页"><span class="brand-mark dragon-brand"><img src="assets/ui/dragon-crest.svg" alt="" aria-hidden="true"></span><span>紫晶白昼<small>AMETHYST DAYLIGHT</small></span></button>
       <button class="new-chat" id="new-chat"><svg><use href="#i-plus"/></svg><span>开启新对话</span><span class="new-chat-gem" aria-hidden="true">✧</span></button>
       <div class="sidebar-section">工作空间</div>
       <button class="nav-item selected" id="nav-home"><svg><use href="#i-moon"/></svg><span>月光书房</span><span class="nav-dot"></span></button>
       <button class="nav-item" id="nav-chat"><svg><use href="#i-chat"/></svg><span>与白银龙娘的对话</span></button>
       <div class="sidebar-section recent-label">最近的对话 <span>示例</span></div>
-      <button class="recent-item" data-prompt="继续设计月夜晶宫界面"><span>月夜晶宫 · 设计手记</span><small>刚刚</small></button>
+      <button class="recent-item" data-prompt="继续设计紫晶白昼界面"><span>紫晶白昼 · 设计手记</span><small>刚刚</small></button>
       <button class="recent-item" data-prompt="帮我整理角色素材目录"><span>整理角色素材与图层</span><small>昨天</small></button>
       <button class="recent-item" data-prompt="一起完善星光与水晶效果"><span>关于星光与水晶</span><small>昨天</small></button>
       <button class="archive-note dragon-note" data-prompt="帮我把零散灵感整理成一页创作笔记"><span class="note-category">SILVER DRAGON NOTES</span><span class="dragon-note-content"><img class="note-portrait" src="assets/ui/dragon-portrait-medallion.svg" alt="" aria-hidden="true"><span><span class="note-heading">龙娘手记</span><small>灵感书签<br>收好每一个念头</small></span></span><span class="note-action">整理一页新想法 <b aria-hidden="true">↗</b></span></button>
@@ -44,31 +45,31 @@
         <section class="home-view" aria-labelledby="home-title">
           <img class="lunar-sigil dragon-sigil" src="assets/ui/dragon-crest.svg" alt="" aria-hidden="true">
           <div class="moon-phase-strip" aria-hidden="true"><span class="phase-label">月相回廊</span><span class="phase-track"><i></i><i></i><i></i><i></i><i></i></span><span class="phase-caption">SILVER DRAGON ATELIER</span></div>
-          <div class="home-copy"><div class="eyebrow"><span></span> SILVER DRAGON · MOON PALACE</div><p class="greeting">夜色正好，欢迎回来。</p><h1 id="home-title">让灵感，<br>在月光中<span>生长。</span></h1><p class="hero-description">云海之上，晶宫静候。<br>把想做的事告诉我，我们从第一步开始。</p></div>
-          <form class="composer home-composer" id="home-form"><label class="sr-only" for="home-input">输入想要尝试的内容</label><textarea id="home-input" placeholder="今晚，我们一起创造些什么？" rows="2"></textarea><div class="composer-bottom"><div class="composer-options"><span class="model-dot"></span><span>月夜助手</span><span class="composer-separator"></span><span class="quiet-label">演示输入</span></div><button class="send-button" type="submit" aria-label="发送模拟消息"><svg><use href="#i-send"/></svg></button></div></form>
+          <div class="home-copy"><div class="eyebrow"><span></span> SILVER DRAGON / 02</div><p class="greeting">白昼正好，欢迎回来。</p><h1 id="home-title">让灵感，<br><span>自由生长。</span></h1><p class="hero-description">云海之上，晶宫静候。<br>把想做的事告诉我，我们从第一步开始。</p></div>
+          <form class="composer home-composer" id="home-form"><label class="sr-only" for="home-input">输入想要尝试的内容</label><textarea id="home-input" placeholder="今天，我们一起创造些什么？" rows="2"></textarea><div class="composer-bottom"><div class="composer-options"><span class="model-dot"></span><span>月夜助手</span><span class="composer-separator"></span><span class="quiet-label">演示输入</span></div><button class="send-button" type="submit" aria-label="发送模拟消息"><svg><use href="#i-send"/></svg></button></div></form>
           <div class="suggestions"><button type="button" data-prompt="一起构思一个新项目"><span class="suggestion-art"><img src="assets/ui/dragon-horns.svg" alt="" aria-hidden="true"></span><span class="suggestion-copy">构思新项目<small>从一束灵感，展开新的篇章</small></span><span class="card-arrow" aria-hidden="true">↗</span></button><button type="button" data-prompt="帮我整理今天的计划"><span class="suggestion-art"><img src="assets/ui/dragon-wing.svg" alt="" aria-hidden="true"></span><span class="suggestion-copy">整理我的想法<small>让零散念头，找到清晰脉络</small></span><span class="card-arrow" aria-hidden="true">↗</span></button><button type="button" data-prompt="帮我设计一个清晰的代码结构"><span class="suggestion-art"><img src="assets/ui/dragon-tail.svg" alt="" aria-hidden="true"></span><span class="suggestion-copy">从代码开始<small>把心中的构想，写成现实</small></span><span class="card-arrow" aria-hidden="true">↗</span></button></div>
           <div class="home-footnote"><span class="tiny-star">✧</span> 银白与淡紫之间，留一处安静的思考空间。</div>
         </section>
         <section class="chat-view" aria-labelledby="chat-title" hidden>
-          <div class="chat-heading"><div class="eyebrow">MOONLIGHT CONVERSATION</div><h1 id="chat-title">月夜晶宫 · 设计手记</h1><p>把想法落成细节，让创作自然发生。</p></div>
+          <div class="chat-heading"><div class="eyebrow">MOONLIGHT CONVERSATION</div><h1 id="chat-title">紫晶白昼 · 设计手记</h1><p>把想法落成细节，让创作自然发生。</p></div>
           <div class="messages" id="messages" aria-live="polite">
-            <article class="message user-message"><span class="message-avatar">你</span><div><div class="message-meta">你 <time>22:08</time></div><p>帮我把月夜晶宫的配色整理成一组主题变量吧。希望正文和代码都清楚，人物留在右侧。</p></div></article>
-            <article class="message assistant-message"><span class="message-avatar crystal-avatar"><svg><use href="#i-crystal"/></svg></span><div class="message-content"><div class="message-meta">白银龙娘 <span class="message-tag">示例回答</span></div><p>当然。让夜蓝承托文字，银白勾勒轮廓，淡紫只在需要强调的地方亮起。</p><div class="palette-inline"><span><i style="--swatch:#121725"></i>夜蓝</span><span><i style="--swatch:#DDE2F2"></i>银白</span><span><i style="--swatch:#B6A4E8"></i>淡紫</span><span><i style="--swatch:#7ABBE4"></i>冰蓝</span></div><div class="code-block"><div class="code-heading"><span>theme.css</span><button id="copy-code" aria-label="复制示例代码"><svg><use href="#i-copy"/></svg><span>复制</span></button></div><pre><code><span class="syntax-purple">:root</span> {
-  <span class="syntax-silver">--night</span>:    <span class="syntax-blue">#121725</span>;
-  <span class="syntax-silver">--silver</span>:   <span class="syntax-blue">#DDE2F2</span>;
-  <span class="syntax-silver">--lavender</span>: <span class="syntax-blue">#B6A4E8</span>;
-  <span class="syntax-silver">--ice</span>:      <span class="syntax-blue">#7ABBE4</span>;
-}</code></pre></div><p class="answer-end">正文使用稳定的深色底面；装饰图层独立呈现，保持阅读与操作的从容。</p><div class="message-complete"><svg><use href="#i-check"/></svg>示例内容已呈现</div></div></article>
+            <article class="message user-message"><span class="message-avatar">你</span><div><div class="message-meta">你 <time>22:08</time></div><p>帮我把紫晶白昼的配色整理成一组主题变量吧。希望正文和代码都清楚，人物留在右侧。</p></div></article>
+            <article class="message assistant-message"><span class="message-avatar crystal-avatar"><svg><use href="#i-crystal"/></svg></span><div class="message-content"><div class="message-meta">白银龙娘 <span class="message-tag">示例回答</span></div><p>当然。用白色承托内容，以深灰紫呈现文字，让淡紫点亮需要强调的地方。</p><div class="palette-inline"><span><i style="--swatch:#FAF9FD"></i>瓷白</span><span><i style="--swatch:#302B3B"></i>墨紫</span><span><i style="--swatch:#8B65C2"></i>淡紫</span><span><i style="--swatch:#7651AF"></i>深紫</span></div><div class="code-block"><div class="code-heading"><span>theme.css</span><button id="copy-code" aria-label="复制示例代码"><svg><use href="#i-copy"/></svg><span>复制</span></button></div><pre><code><span class="syntax-purple">:root</span> {
+  <span class="syntax-silver">--canvas</span>:    <span class="syntax-blue">#FAF9FD</span>;
+  <span class="syntax-silver">--ink</span>:   <span class="syntax-blue">#302B3B</span>;
+  <span class="syntax-silver">--accent</span>: <span class="syntax-blue">#8B65C2</span>;
+  <span class="syntax-silver">--focus</span>:      <span class="syntax-blue">#7651AF</span>;
+}</code></pre></div><p class="answer-end">正文使用稳定的浅色底面；装饰图层独立呈现，保持阅读与操作的从容。</p><div class="message-complete"><svg><use href="#i-check"/></svg>示例内容已呈现</div></div></article>
           </div>
           <form class="composer chat-composer" id="chat-form"><label class="sr-only" for="chat-input">继续模拟对话</label><textarea id="chat-input" rows="1" placeholder="继续你的想法……"></textarea><div class="composer-bottom"><div class="composer-options"><svg><use href="#i-attach"/></svg><span class="composer-separator"></span><span class="model-dot"></span><span>月夜助手</span><span class="quiet-label">模拟对话</span></div><button class="send-button" type="submit" aria-label="发送模拟消息"><svg><use href="#i-send"/></svg></button></div></form>
         </section>
       </main>
-      <footer class="workspace-footer"><span>白银龙娘 · 月夜晶宫</span><span>月夜水晶主题 / 设计概念</span></footer>
+      <footer class="workspace-footer"><span>白银龙娘 · 紫晶白昼</span><span>白紫动态主题 / 模拟预览</span></footer>
     </div>
   </div>
   <div class="character-caption" aria-hidden="true"><span class="caption-line"></span><span>白银龙娘<small>守候月光，也守候你的灵感。</small></span></div>
   <div class="appearance-panel" id="appearance-panel" hidden><div class="panel-title">月夜外观 <span>预览设置</span></div><label for="motion-select">人物与场景动态</label><select id="motion-select"><option value="off">关闭 · 静态阅读</option><option value="subtle">轻量 · 柔和微动</option><option value="full">完整 · 月夜氛围</option></select><p>菜单、滚动与输入法组合期间收敛装饰。系统减少动态设置优先。</p><div id="asset-status" class="asset-status">正在载入人物图层…</div></div>
-  <section class="preview-toolbar" aria-label="独立预览控制"><div class="toolbar-title"><svg><use href="#i-crystal"/></svg><span>设计预览<small>所有任务状态均为模拟</small></span></div><div class="view-switch" role="group" aria-label="构图"><button data-view="home" class="active">全身首页</button><button data-view="chat">半身聊天页</button></div><div class="toolbar-state"><span class="control-label">模拟状态</span><select id="task-select" aria-label="模拟任务状态"><option value="idle">静候灵感</option><option value="busy">执行中</option><option value="done">已完成</option><option value="attention">待确认</option><option value="error">执行失败</option></select><span id="task-status" class="task-status" role="status">静候灵感</span></div><button id="motion-cycle" class="motion-cycle">动态：轻量</button></section>
+  <section class="preview-toolbar" aria-label="独立预览控制"><div class="toolbar-title"><svg><use href="#i-crystal"/></svg><span>设计预览<small>所有任务状态均为模拟</small></span></div><div class="view-switch" role="group" aria-label="构图"><button data-view="home" class="active">坐姿首页</button><button data-view="chat">清晰聊天页</button></div><div class="toolbar-state"><span class="control-label">模拟状态</span><select id="task-select" aria-label="模拟任务状态"><option value="idle">静候灵感</option><option value="busy">执行中</option><option value="done">已完成</option><option value="attention">待确认</option><option value="error">执行失败</option></select><span id="task-status" class="task-status" role="status">静候灵感</span></div><button id="motion-cycle" class="motion-cycle">动态：轻量</button></section>
   <div class="toast" id="toast" role="status" hidden></div>
   <script src="app.js"></script>
 </body>

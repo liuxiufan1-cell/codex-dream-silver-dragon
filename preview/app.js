@@ -161,7 +161,7 @@
   $('main-content').addEventListener('scroll',()=>settle(700),{passive:true});
   document.addEventListener('visibilitychange',()=>{document.body.classList.toggle('page-hidden',document.hidden);openEyes();scheduleBlink();});
   reduced.addEventListener('change',()=>setMotion(state.motion,false));
-  $('copy-code').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(':root {\n  --night: #121725;\n  --silver: #DDE2F2;\n  --lavender: #B6A4E8;\n  --ice: #7ABBE4;\n}');toast('示例主题变量已复制。');}catch{toast('当前环境不支持复制，请在代码框选择文字。');}});
+  $('copy-code').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(':root {\n  --canvas: #FAF9FD;\n  --ink: #302B3B;\n  --accent: #8B65C2;\n  --focus: #7651AF;\n}');toast('示例主题变量已复制。');}catch{toast('当前环境不支持复制，请在代码框选择文字。');}});
   document.body.classList.toggle('page-hidden',document.hidden);
   setView(params.get('view'),false); setMotion(params.get('motion')||safeStorage.get('moon-palace.motion')||'subtle',false); setTask(params.get('state')||'idle');
   loadAssets();

@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "silver-dragon-moon-palace",
-  "name": "白银龙娘 · 月夜晶宫（测试版）",
-  "brandSubtitle": "SILVER DRAGON // MOON PALACE",
+  "name": "白银龙娘 · 紫晶白昼（动态测试版）",
+  "brandSubtitle": "SILVER DRAGON // AMETHYST DAYLIGHT",
   "tagline": "月光落在晶宫，思绪在此成形。",
   "projectPrefix": "MOON ARCHIVE // ",
   "projectLabel": "选择项目",
-  "statusText": "月夜晶宫",
+  "statusText": "紫晶白昼",
   "quote": "循着月光，写下新的篇章。",
   "image": "background.png",
-  "appearance": "dark",
+  "appearance": "light",
   "art": {
     "focusX": 0.72,
     "focusY": 0.48,
@@ -17,15 +17,15 @@
     "taskMode": "off"
   },
   "colors": {
-    "background": "#121725",
-    "panel": "#191F30",
-    "panelAlt": "#20283D",
-    "accent": "#B6A4E8",
-    "accentAlt": "#7ABBE4",
-    "secondary": "#A8B1CA",
-    "highlight": "#DDE2F2",
-    "text": "#DDE2F2",
-    "muted": "#A8B1CA",
-    "line": "#626E89"
+    "background": "#FAF9FD",
+    "panel": "#FFFFFF",
+    "panelAlt": "#F0EAF8",
+    "accent": "#8B65C2",
+    "accentAlt": "#7651AF",
+    "secondary": "#71677F",
+    "highlight": "#302B3B",
+    "text": "#302B3B",
+    "muted": "#71677F",
+    "line": "#DED5EA"
   }
 }

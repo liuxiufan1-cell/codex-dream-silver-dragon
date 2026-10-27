@@ -1,60 +1,38 @@
-# 白银龙娘 · 月夜晶宫（测试版）
+# 白银龙娘 · 紫晶白昼（动态测试版）
 
-**Codex Dream Silver Dragon · v1.0.0-beta.1**
+**Codex Dream Silver Dragon · v1.0.0-beta.2**
 
-当前为公开测试版本，功能与兼容性仍在验证，暂不作为稳定版发布。项目提供月夜水晶风格的动态主题组件、透明角色素材、普通静态主题和独立模拟预览。
+白色为主、紫色点缀的 Codex 动态皮肤：右侧斜坐龙娘、白色晶宫、左侧海报式操作区，首页与聊天页统一浅色阅读面板。
 
-> 公开内容供查看和下载，未额外授予修改、再分发或商业使用许可。详见 [权利声明](LICENSE-NOTICE.md)。
+![首页浏览器预览](concepts/home-2560x1440.png)
+![聊天页浏览器预览](concepts/chat-2560x1440.png)
 
-![全身首页概念稿](concepts/home-2560x1440.png)
+以上为独立模拟预览的 Chromium 截图，不是实际 Codex 截图；消息和任务状态均为示例。
 
-![半身聊天页概念稿](concepts/chat-2560x1440.png)
+## 动态皮肤与安装
 
-以上为 **2560×1440 离线概念稿**，内容与任务状态均为模拟，不是应用截图。
+**主要交付为动态组件与版本锁定接入工具。仅导入静态 ZIP 不会安装动态人物。**
 
-## 测试版下载
+1. 使用 Windows NGO **v1.9.0**；接入工具会校验官方 injector 的精确哈希，未知版本停止安装。
+2. 在引擎中导入配套的 `static` ZIP 并选择本主题。
+3. 退出 Codex 和主题工具，按[安装说明](docs/installation.md)运行动态接入工具。
+4. 重启主题工具与 Codex，启用人物动效；默认建议「轻量」，也支持关闭和完整。
 
-到 [Releases 下载测试版](https://github.com/liuxiufan1-cell/codex-dream-silver-dragon/releases)。
+这是测试版。已经验证浏览器渲染、组件逻辑和固定版本引擎的组装流程；**尚未在 Windows Codex 客户端验收**，不承诺未测试的客户端版本兼容。仓库不包含 Codex 或第三方引擎安装器。
 
-| 文件 | 内容 |
-| --- | --- |
-| `codex-dream-silver-dragon-windows-theme-v1.0.0-beta.1.zip` | 源码、素材、已构建动态组件和 Windows 独立预览入口 |
-| `codex-dream-silver-dragon-static-v1.0.0-beta.1.zip` | 配置、受限 CSS 和静态背景，严格三个文件 |
-| `codex-dream-silver-dragon-source-v1.0.0-beta.1.zip` | 分类源码、素材、概念稿、文档与测试 |
-| `SHA256SUMS.txt` / `release-manifest.json` | 下载校验值与发布文件清单 |
+## 动态与功能
 
-Windows 包可启动独立模拟预览。**动态组件仍需兼容宿主集成，测试版暂不提供通用安装器。** 静态 ZIP 可通过兼容第三方引擎导入。包内不含 Codex 应用或完整第三方皮肤引擎。
+- 新坐姿人物，八层透明图像共享同一坐标画布，头脸与手脚保持稳定。
+- 独立躯干轻呼吸、发梢和袖摆微动、翼尾摆动及三态眨眼。
+- 关闭 / 轻量 / 完整三档，尊重宿主开关与系统减少动态设置。
+- 菜单、输入法组合、滚动和后台期间暂停或收敛动态；清理和重复挂载可恢复。
+- 宽屏人物位于右侧；窄窗口隐藏人物；聊天页减少装饰，保持正文、代码与输入框稳定。
+- 装饰不接收鼠标或键盘事件；真实任务绑定保留原有结构化事件校验，不从聊天文字推测状态。
+- `palette.json` 为配色来源，预览、动态组件和静态主题从同一份配色生成。
 
-## 功能
+## 预览、测试与打包
 
-- 首页全身、聊天半身；左侧龙翼、鳞尾纹样与淡紫彩雾。
-- 八层透明角色，稳定头脸，局部呼吸、发梢和袖摆微动、翼尾摆动及三态眨眼。
-- 关闭 / 轻量 / 完整三档；菜单、滚动、输入法组合和后台时收敛动态。
-- 兼容宿主中被动读取当前页面与结构化任务事件；身份无法确认时保持未知。
-- 独立 HTML 预览使用明确标注的模拟状态，不调用模型。
-- 装饰不截获点击，正文、代码和输入框不跟随角色位移。
-
-## 源码分类
-
-```text
-preview/       独立 HTML / CSS / JavaScript 模拟预览
-runtime/       动态组件核心与样式；dist/ 由构建生成
-assets/art/    背景与龙娘氛围素材
-assets/layers/ 透明部件、眨眼补片、坐标和动作清单
-assets/ui/     龙角、翼、鳞片、银结等 SVG 装饰
-static-theme/  普通静态主题源文件
-integration/   实验性宿主集成模板与 ZIP 工具
-concepts/      两张定稿概念稿
-scripts/       构建、素材导出、发布校验和打包
-tests/         惰性 DOM 与虚拟时钟回归
-docs/          使用、设计、动作、适配和验证边界
-palette.json   配色表
-server.mjs     独立预览服务器
-```
-
-## 预览与构建
-
-需要 Node.js 20 或更新版本。预览、动态构建、基本测试和打包只使用 Node 内置模块。
+Node.js 20+。普通预览、构建、逻辑测试和打包只需 Node 内置模块；素材再导出和浏览器验证需要开发依赖。
 
 ```sh
 npm run preview
@@ -63,27 +41,28 @@ npm test
 npm run package
 ```
 
-运行预览后，按终端提示打开浏览器地址。Windows 可双击 `launch-preview.cmd`，或软件包中的 `启动测试预览.cmd`；关闭启动终端即可停止预览。服务器仅监听回环地址。
-
-生成包输出至 `release/v1.0.0-beta.1/`。依赖、构建产物、报告和临时文件不会被提交或再次打进源码包。
-
-重新导出离线概念稿需要图形依赖：
+Windows 可双击 `launch-preview.cmd`。预览只监听本机回环地址，不连接真实会话。
 
 ```sh
-npm install
+npm ci
+npx playwright install chromium
+npm run test:browser
 npm run render:concepts
 ```
 
-该命令用 `sharp` 排版 SVG，导出结果不是浏览器截图。系统字体差异可能影响文字排版。
+系统已安装 Chromium 时可设置 `CHROMIUM_PATH`。固定版本引擎验证使用 `NGO_ENGINE_DIR` 指向官方 v1.9.0 的 `windows` 目录，再运行 `npm run test:engine`；该检查只修改临时副本。
 
-## 说明
+包输出至 `release/v1.0.0-beta.2/`：Windows 动态主题包含构建组件、接入/恢复工具与预览；静态备用包严格只有三个文件；源码包包含编辑源文件和验证脚本。每个包附 SHA256 清单。
 
-- [测试版使用与兼容性](docs/installation.md)
+## 项目说明
+
+- [本次验证记录](docs/validation-beta2.md)
+- [安装与恢复](docs/installation.md)
+- [副本与安装差异、验证边界](docs/native-acceptance.md)
+- [动态组件与界面设计](docs/runtime-design.md)
 - [素材与配色](docs/assets.md)
 - [动作规范](docs/motion-spec.md)
-- [动态组件设计](docs/runtime-design.md)
-- [路由与任务绑定](docs/runtime-memory-router.md)
-- [测试范围与限制](docs/native-acceptance.md)
+- [真实路由与任务绑定](docs/runtime-memory-router.md)
 - [第三方关系](docs/third-party.md)
 
-项目不含设备部署配置、账号、会话、日志、原始参考图或第三方程序。与 OpenAI 无隶属或官方背书关系；第三方作品和商标的权利属于各自权利人。
+公开内容供查看和下载，未额外授予修改、再分发或商业使用许可，见 [权利声明](LICENSE-NOTICE.md)。本项目与 OpenAI 无隶属或官方背书关系。
